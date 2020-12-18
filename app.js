@@ -6,12 +6,17 @@ var server = express();
 
 server.get("/", (req,res,next)=>{
     console.log("Someone Else");
-    res.send("Menu: /n What do you want? /n Food /n Water")
+    res.send("Menu: What do you want? Food Water")
 })
 
-server.get("water", (req,res,next)=>{
+server.get("/water", (req,res,next)=>{
     console.log("Someone asking for water");
-    res.send("Here is water")
+    res.send("Here is water :)")
+})
+
+server.get("/food", (req,res,next)=>{
+    console.log("Someone asking for water");
+    res.send("Here is Food :)")
 })
 
 server.listen(PORT, ()=>{
